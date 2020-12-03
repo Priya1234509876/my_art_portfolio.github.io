@@ -176,7 +176,7 @@ background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);
     
 }
 
-@media(max-width:900px){
+@media(max-width:989px){
     #img_sec3{
         height: auto;
         width: 100%;

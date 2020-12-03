@@ -145,17 +145,20 @@ hr{
     margin-bottom: 80px;
 }
 
-/* Footer */
-.page-footer{
-    background-color: rgb(187, 187, 187);
-}
-
-@media(max-width:500px){
+@media(max-width:900px){
     .form_info{
         padding-right:50px ;
         padding-left:50px ;
     }
 }
+
+
+/* Footer */
+.page-footer{
+    background-color: rgb(187, 187, 187);
+}
+
+
 
 
 

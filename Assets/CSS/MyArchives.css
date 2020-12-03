@@ -126,6 +126,7 @@ hr{
 }
 
 
+
 /* Portraits */
 .col-lg-3 .card-img-top{
     height: 500px;
@@ -139,6 +140,27 @@ hr{
         font-size: 1.5rem;
         font-weight: 100;
         margin: 0;
+    }
+}
+
+@media(max-width:1550px){
+    .img_mycollection{
+        height: 500px;
+        width: auto;
+    }
+}
+
+@media(max-width:1550px){
+    .img_mycollection_l{
+        height: 300px;
+        width: auto;
+    }
+}
+
+@media(max-width:989px){
+    .img_mycollection,  .img_mycollection_l{
+        height: auto;
+        width: 100%;
     }
 }
 

@@ -208,11 +208,7 @@ background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);
         margin: 0;
     }
 
-    img{
-        min-height: 400px;
-        overflow: hidden;
-
-    }
+  
 }
 
 

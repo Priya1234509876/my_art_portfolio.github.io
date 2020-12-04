@@ -1,13 +1,127 @@
 
-$("#btn_dkmode").click(function(){
+
+var card_body;
+var title;
+var imagePath ;
+
+// $(".btn_add_card").on("click",function(){
+//     $(".new__card__").toggle();
+// })
+
+$("#btn_add_card").on("click",function(){
+    $(".new__card__").append('<input type="text" id="path" class= "p-2 mx-2" placeholder="Enter Image Path">')
+    $(".new__card__").append('<input type="text" id="title" class= "p-2 mx-2"  placeholder="Enter Card Title">')
+    $(".new__card__").append('<input type="text"  id="id_card_body" class= "p-2 mx-2"  placeholder="Enter Card Body">')
+    $(".new__card__").append('<button class="btn btn-outline-danger btn-sm new_card_btn p-3"><i class="far fa-heart"></i></button>')
+    $("#path").keypress(function(event){
+    if(event.keyCode === 13){
+        imagePath = $("#path").val();
+        $("#path").val("");
+        $("#path").remove();      
+    
+    // $("input[type='text']").fadeOut;
+    
+    }
+})
+    
+    $("#title").keypress(function(event){
+        if(event.keyCode === 13){
+             title = $("#title").val();
+            $("#title").val("");
+            $("#title").remove(); 
+        }
+    })
+
+        $("#id_card_body").keypress(function(event){
+            if(event.keyCode === 13){
+                card_body = $("#id_card_body").val();
+                $("#id_card_body").val("");
+                $("#id_card_body").remove(); 
+                 
+            }
+            
+
+    }) 
+
+   
+    $(".new_card_btn").on("click",function(){
+        $(".row").append('<div class="col-lg-4 d-flex im_hi_div my-2 "><div class="card"><img src="' + imagePath + '" class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">' + title + '</h5><p class="card-text">' + card_body + '</p><button class="btn btn-outline-light btn-sm mx-2 btn_delete_card">Delete Card</button><button class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></button></div><div class="card-footer"><small class="text-muted">Last updated 3 mins ago</small></div></div></div>');
+        $(".new_card_btn").remove();
+    })
+
+
+   
+    });    
+
+  
+
+    // if($("#body").remove())   {
+       
+    // } 
+    
+
+
+// entering card body
+
+// $(".buttons").append('<input id="body" placeholder="Enter Card Body">')
+//     $("#body").keypress(function(event){
+//     if(event.keyCode === 13){
+//         var body_text = $("#body").val();
+//         $("#body").val("");
+//         $(".new_card").append('<p class="card-text">' +body_text + '</p><button class="btn btn-outline-light btn-sm mx-2 btn_delete_card">Delete Card</button><button class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></button></div><div class="card-footer"><small class="text-muted">Last updated 3 mins ago</small></div></div></div>');    
+    
+//     // $("input[type='text']").fadeOut;
+//     $("#body").remove(); 
+//     }
+// })
+
+
+// } )
+
+$("#btn_dkmode").on("click", function(){
     $(".card").toggleClass("dkmode");
 });
 
-$(".card-img-top").click(function(){
-    $(".card-body").toggle();
-    $(".im_hi_div").removeClass("d-flex");
-})
+// $(".card-img-top").on("click", function(){
+//     $(".card-body").toggle();
+//     $(".im_hi_div").toggleClass("d-flex");
+// })
 
 // $(".card-img-top").click(function(){
 //     $(".card-body").remove();
 // })
+
+// $(".btn_delete_card").on("click",function(){
+//     $(".btn_delete_card").parentsUntil(".row ").remove();
+// } )
+
+
+$(".row").on("click",".btn_delete_card",function(){
+        $(this).parentsUntil(".row ").remove();
+    } )
+
+    $(".row").on("click",".card-img-top",function(){
+        $(".card-body").toggle();
+            $(".im_hi_div").toggleClass("d-flex");
+    } )
+
+
+// $(".btn_delete_card").on("click",'parentsUntil(".row ")', function(){
+//     $(this).remove();
+// } )
+
+// $(document).on('click', ".card", function(){
+//     $(this).remove();
+// } )
+
+
+// C O R R  E C T
+// $(".im_hi_div").on("click",".card-img-top", function(){
+//     $(".card-body").toggle();
+//     $(".im_hi_div").toggleClass("d-flex");
+// });
+
+// $(".btn_delete_card").on("click",function(){
+//     $(this).parentsUntil(".row ").remove();
+// } )
+// C O R R  E C T

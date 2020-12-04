@@ -141,6 +141,56 @@ hr{
     background-color: rgb(187, 187, 187);
 }
 
+@media(max-width:505px){
+    .nav-brand, .psec2{
+        font-size: 2rem;
+        margin: 0;
+    }
+
+    .buttons{
+        margin: 8px auto;
+    }
+
+    .btns_top{
+        margin-top: 10px;
+        /* margin-right: 100px!important; */
+        width: 90%;
+
+    }
+    
+}
+
+@media(max-width:1250px){
+    .nav-brand, .psec2{
+        font-size: 2.5rem;
+    }
+    
+    
+}
+@media(max-width:1250px){
+    .navbar-expand-lg .navbar-nav .nav-link{
+    padding: 0.5rem 1.5rem;
+
+}
+
+}
+
+.navbar-dark .navbar-toggler{
+    border: 0;
+    
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.912);
+}
+
+
+@media(max-width:989px){
+
+    .bg-transparent {
+        background-color: rgba(48, 48, 48, 0.81)!important;
+    }
+}
 
 
 

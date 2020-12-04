@@ -58,7 +58,7 @@ hr{
 
 .nav-brand, .psec2{
     font-family: 'Anton', sans-serif;
-    font-size: 50px;
+    font-size: 3rem;
     text-transform: uppercase;
     font-weight: bolder;
     color: white;
@@ -88,7 +88,7 @@ hr{
     background: #1a2a6c; 
     background: -webkit-linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c); 
     background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);
-    height: 100px;
+    /* height: 100px; */
     padding-top: 160px;
     padding-bottom: 70px;
     color: seashell;
@@ -153,6 +153,8 @@ hr{
 }
 
 
+
+
 /* Footer */
 .page-footer{
     background-color: rgb(187, 187, 187);
@@ -162,4 +164,50 @@ hr{
 
 
 
+@media(max-width:505px){
+    .nav-brand, .psec2{
+        font-size: 2rem;
+        margin: 0;
+    }
+    
+}
 
+@media(max-width:1250px){
+    .nav-brand, .psec2{
+        font-size: 2.5rem;
+    }
+    
+    
+}
+@media(max-width:1250px){
+    .navbar-expand-lg .navbar-nav .nav-link{
+    padding: 0.5rem 1.5rem;
+
+}
+
+}
+/* 
+@media(max-width:1127px){
+    .nav-brand, .psec2{
+        font-size: 40px;
+        margin: 0;
+    }
+    
+} */
+
+.navbar-dark .navbar-toggler{
+    border: 0;
+    
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.912);
+}
+
+
+@media(max-width:989px){
+
+    .bg-transparent {
+        background-color: rgba(48, 48, 48, 0.81)!important;
+    }
+}

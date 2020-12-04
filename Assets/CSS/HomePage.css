@@ -27,6 +27,10 @@ hr{
     padding: 45px;
 }
 
+.pr-0, .px-0 {
+    padding-right: 15px!important;
+}
+
 
 /* Javascript classes */
 
@@ -177,9 +181,37 @@ background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);
 }
 
 @media(max-width:989px){
+
+    /* .bg-transparent {
+        background-color: rgba(48, 48, 48, 0.81)!important;
+    } */
     #img_sec3{
         height: auto;
         width: 100%;
+    }
+    .nav-brand{
+        font-size: 3rem;
+        font-weight: 100;
+        margin: 0;
+    }
+
+    
+}
+
+@media(max-width:500px){
+    #div_pngg, #div_png{
+        padding: 3rem 4rem;
+    }
+    .nav-brand{
+        font-size: 2rem;
+        font-weight: 100;
+        margin: 0;
+    }
+
+    img{
+        min-height: 400px;
+        overflow: hidden;
+
     }
 }
 
@@ -189,4 +221,13 @@ background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);
 .page-footer{
     background-color: rgb(187, 187, 187);
    
+}
+
+.navbar-dark .navbar-toggler{
+    border: 0;
+    
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.912);
 }

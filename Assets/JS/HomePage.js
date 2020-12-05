@@ -1,5 +1,73 @@
 
 
+// function readImage(file){
+// 	const selected_img = new FileReader();
+// 	selected_img.addEventListener('load', (event)=>{
+// 	  $("#Upload_Image").src = event.target.result;
+// 	});
+// 	selected_img.readAsDataURL(file);
+// 	}
+
+
+// function readURL(el) {
+//     if (el.files && el.files[0]) {
+//          var FR= new FileReader();
+//          FR.onload = function(e) {
+//               $("#top_id_image").attr("src", e.target.result);
+//             //   socket.emit('image', e.target.result);
+//             //   console.log(e.target.result);
+//          };       
+//          FR.readAsDataURL( el.files[0] );
+//     } 
+// };
+const status = document.getElementById('status');
+      const output = document.getElementById('top_id_Image');
+if (window.FileList && window.File && window.FileReader) {
+	document.getElementById('file-selector').addEventListener('change', event => {
+	  output.src = '';
+	  status.textContent = '';
+	  const file = event.target.files[0];
+	  if (!file.type) {
+		status.textContent = 'Error: The File.type property does not appear to be supported on this browser.';
+		return;
+	  }
+	  if (!file.type.match('image.*')) {
+		status.textContent = 'Error: The selected file does not appear to be an image.'
+		return;
+	  }
+	  const reader = new FileReader();
+	  reader.addEventListener('load', event => {
+		output.src = event.target.result;
+	  });
+	  reader.readAsDataURL(file);
+	}); 
+  }
+
+
+	// if (window.FileList && window.File && window.FileReader) {
+    //     document.getElementById('upload_image').addEventListener('change', event => {
+    //       $("#top_id_image").src = '';
+    //     //   status.textContent = '';
+    //     //   const file = event.target.files[0];
+    //     //   if (!file.type) {
+    //     //     status.textContent = 'Error: The File.type property does not appear to be supported on this browser.';
+    //     //     return;
+    //     //   }
+    //     //   if (!file.type.match('image.*')) {
+    //     //     status.textContent = 'Error: The selected file does not appear to be an image.'
+    //     //     return;
+	// 	//   }
+		
+    //       const reader = new FileReader();
+    //       reader.addEventListener('load', event => {s
+	// 		$("#top_id_image").src = event.target.result;
+    //       });
+    //       reader.readAsDataURL(file);
+    //     }); 
+	//   }
+	  
+
+
 $("#img_png").click(function(){
  $(".back_grad").toggleClass("grad_change");
  
@@ -49,4 +117,8 @@ $("input[type='text']").keypress(function(event){
 		$("#btn_top_image").click();
 			}
 })
+
+
+
+
 

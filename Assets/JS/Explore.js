@@ -1,25 +1,49 @@
 
+$(".row").on("click",".btn_delete_card",function(){
+    $(this).parentsUntil(".row ").remove();
+});
 
-var card_body;
-var title;
-var imagePath ;
+$(".row").on("click",".card-img-top",function(){
+    $(".card-body").toggle();
+        $(".im_hi_div").toggleClass("d-flex");
+});
+
+$("#btn_dkmode").on("click", function(){
+    $(".card").toggleClass("dkmode");
+});
+
+
 
 // $(".btn_add_card").on("click",function(){
 //     $(".new__card__").toggle();
 // })
 
 $(".buttons").on("click","#btn_add_card",function(){
+    $(".temp-form").remove();
+    // $( ".new_card_btn").trigger( "click" );
+    // $('.form-group button').trigger('click');
+    // $(".new_card_btn").click();
+    var card_body= null;
+var title = null;
+var imagePath = null;
+
+
 // $("#btn_add_card").on("click",function(){
-    $(".new__card__").append('<div class="form-group"><input type="text" id="path" class= " form-control" placeholder="Enter Image Path"></div>');
-    $(".new__card__").append('<div class="form-group"><input type="text" id="title" class= "form-control"  placeholder="Enter Card Title"></div>')
-    $(".new__card__").append('<div class="form-group"><input type="text"  id="id_card_body" class= "form-control"  placeholder="Enter Card Body"></div>')
-    $(".new__card__").append('<div class="form-group"><button class="btn btn-outline-danger btn-sm new_card_btn p-3 "><i class="far fa-heart"></i></button></div>')
+    // $(".new__card__").append('')
+    $(".new__card__").append('<form class="temp-form"><div class="form-group"><input type="text" id="path" class= " form-control" placeholder="Enter Image Path"></div><div class="form-group"><input type="text" id="title" class= "form-control"  placeholder="Enter Card Title"></div><div class="form-group"><input type="text"  id="id_card_body" class= "form-control"  placeholder="Enter Card Body"></div><div class="form-group d-inline-flex"><button type= "button" class="btn btn-primary btn-sm new_card_btn p-3  " >ADD</button></div><div class="form-group d-inline-flex mx-3"><button type= "button" class="btn btn-danger btn-sm new_card_btn_cancel p-3 " >CANCEL</button></div></form>');
+    // $(".new__card__").append('')
+    // $(".new__card__").append('')
+    // $(".new__card__").append('')
+    // $(".new__card__").append('')
+    //type="button"   onclick="getData(); return false"
+
+
     //$(".new__card__").append('<div class="form-group"><button class="btn btn-outline-primary btn-sm new_card_btn_del p-3 "><i class="far fa-user"></i></button></div>')
     $("#path").keypress(function(event){
     if(event.keyCode === 13){
-        imagePath = $("#path").val();
-        $("#path").val("");
-        $("#path").remove();  
+        imagePath = $(this).val();
+        $(this).val("");
+        $(this).remove();  
         
     
     // $("input[type='text']").fadeOut;
@@ -37,17 +61,17 @@ $(".buttons").on("click","#btn_add_card",function(){
         //     {event.keyCode === 13})
         // $("#path").remove(); 
         if(event.keyCode === 13){
-             title = $("#title").val();
-            $("#title").val("");
-            $("#title").remove(); 
+             title = $(this).val();
+            $(this).val("");
+            $(this).remove(); 
         }
     })
 
         $("#id_card_body").keypress(function(event){
             if(event.keyCode === 13){
-                card_body = $("#id_card_body").val();
-                $("#id_card_body").val("");
-                $("#id_card_body").remove(); 
+                card_body = $(this).val();
+                $(this).val("");
+                $(this).remove(); 
                  
             }
             
@@ -55,13 +79,24 @@ $(".buttons").on("click","#btn_add_card",function(){
     }) 
     
 
-
+    
    
     $(".form-group").on("click",".new_card_btn",function(){
+        // e.preventDefault();
+        $(".temp-form").remove();
+        // event.preventDefault();
+        $(".row").append('<div class="col-lg-4 d-flex im_hi_div my-2 "><div class="card"><img src="' + imagePath + '" class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">' + title + '</h5><p class="card-text">' + card_body + '</p><button class="btn btn-outline-light btn-sm mx-2 btn_delete_card">Delete Card</button><button type="button" onclick="getData()" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></button></div><div class="card-footer"><small class="text-muted">Last updated 3 mins ago</small></div></div></div>');
+        // getData();
+    })   
+    $(".form-group").on("click",".new_card_btn_cancel",function(){
         
-        $(".row").append('<div class="col-lg-4 d-flex im_hi_div my-2 "><div class="card"><img src="' + imagePath + '" class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">' + title + '</h5><p class="card-text">' + card_body + '</p><button class="btn btn-outline-light btn-sm mx-2 btn_delete_card">Delete Card</button><button class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></button></div><div class="card-footer"><small class="text-muted">Last updated 3 mins ago</small></div></div></div>');
+        $(".temp-form").remove();
+      
+    })    
+       
+});   
         // $(this).parentsUntil("form").remove();
-       $(".new_card_btn").remove();
+       
        
        
         // $(".new_card_btn").remove();parentsUntil(".new__card__")
@@ -70,7 +105,7 @@ $(".buttons").on("click","#btn_add_card",function(){
         // $(".new__card__").remove()
     //    $(".form-group").remove(); 
     
-    })
+   
         
     // $(".form-group").on("click",".new_card_btn",function(){
     //     $(this).parent().remove()});
@@ -88,7 +123,7 @@ $(".buttons").on("click","#btn_add_card",function(){
 
 
    
-    });    
+       
 
   
 
@@ -115,9 +150,7 @@ $(".buttons").on("click","#btn_add_card",function(){
 
 // } )
 
-$("#btn_dkmode").on("click", function(){
-    $(".card").toggleClass("dkmode");
-});
+
 
 // $(".card-img-top").on("click", function(){
 //     $(".card-body").toggle();
@@ -133,14 +166,7 @@ $("#btn_dkmode").on("click", function(){
 // } )
 
 
-$(".row").on("click",".btn_delete_card",function(){
-        $(this).parentsUntil(".row ").remove();
-    } )
 
-    $(".row").on("click",".card-img-top",function(){
-        $(".card-body").toggle();
-            $(".im_hi_div").toggleClass("d-flex");
-    } );
 
 
 // $(".btn_delete_card").on("click",'parentsUntil(".row ")', function(){

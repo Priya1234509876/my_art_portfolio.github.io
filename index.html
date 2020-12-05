@@ -61,12 +61,23 @@
          <!-- Section 1 -->
 
          <section class="container-fluid px-0">
-            <div class="row align-items-center">
-                <div class="col-lg-12 " id="top_image">
-                    <img src="Images/angel-1841177.jpg" id="top_id_Image" class="image_top_tag d-sm-block d-none" > 
-                    <!-- <img id="output"> -->
-                    <p id="status" class="d-none"></p>
-                    <img src="Images/angel-1841177_for_mob.jpg" class="image_top_tag d-sm-none d-block" >      
+            <div class="row align-items-center" id="top_row">
+                <div class="col-lg-12 d-flex align-items-end flex-column " id="top_image" style="background-image: url(Images/angel-1841177.jpg);">
+                    <!-- <img src="Images/angel-1841177.jpg" id="top_id_image" class="image_top_tag" >  -->
+                    <!-- <img id="output"> -->   
+                    <!-- <p id="status" class="d-none"></p> -->
+                    <!-- <img src="Images/angel-1841177_for_mob.jpg" id="top_id_image_mob" class="image_top_tag d-sm-none d-block" >       -->
+                    <div class="mt-auto">
+                      <!-- <label for="inputtext">ENTER IMAGE PATH HERE:</label>
+                      <input type="text" class="m-2">
+                      <button class="btn btn-outline-dark btn-sm" id="btn_top_image">ENTER</button>-->
+                      <!-- <input type="file" id="file" onchange="readURL(this)"/> -->
+                      <!-- <input type="file" id="file-selector"  class="btn btn-outline-dark btn-lg"> -->
+                    
+                      <label class="custom-file-upload btn btn-outline-light btn-lg">
+                        <input type="file" id="file-selector"  ><i class="fas fa-camera"></i>
+                    </label>
+                  </div>
                 </div>
             </div>
          </section>
@@ -99,17 +110,7 @@
                   <div><img src="Images/picture-3-512.png" id="img_png"> </div>
                   <hr class="my-4">
                   
-                  <div>
-                    <!-- <label for="inputtext">ENTER IMAGE PATH HERE:</label>
-                    <input type="text" class="m-2">
-                    <button class="btn btn-outline-dark btn-sm" id="btn_top_image">ENTER</button>-->
-                    <!-- <input type="file" id="file" onchange="readURL(this)"/> -->
-                    <!-- <input type="file" id="file-selector"  class="btn btn-outline-dark btn-lg"> -->
-                  
-                    <label class="custom-file-upload">
-                      <input type="file" id="file-selector"  ><i class="fas fa-camera"></i>
-                  </label>
-                </div>
+                 
                     
                     <div>For Example : Try entering Images/alleyway-5139747.jpg</div>
                     <div>

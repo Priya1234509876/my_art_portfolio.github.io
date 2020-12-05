@@ -20,28 +20,34 @@
 //          FR.readAsDataURL( el.files[0] );
 //     } 
 // };
-const status = document.getElementById('status');
-      const output = document.getElementById('top_id_Image');
-if (window.FileList && window.File && window.FileReader) {
-	document.getElementById('file-selector').addEventListener('change', event => {
-	  output.src = '';
-	  status.textContent = '';
+// const status = document.getElementById('status');
+// const output = document.get('top_image');
+// if (window.FileList && window.File && window.FileReader) {
+	
+	$('#file-selector').on('change', event => {
+		// $("#top_image").remove();
+	//   output.src = '';
+	//   status.textContent = '';
 	  const file = event.target.files[0];
-	  if (!file.type) {
-		status.textContent = 'Error: The File.type property does not appear to be supported on this browser.';
-		return;
-	  }
-	  if (!file.type.match('image.*')) {
-		status.textContent = 'Error: The selected file does not appear to be an image.'
-		return;
-	  }
-	  const reader = new FileReader();
+	//   if (!file.type) {
+	// 	status.textContent = 'Error: The File.type property does not appear to be supported on this browser.';
+	// 	return;
+	//   }
+	//   if (!file.type.match('image.*')) {
+	// 	status.textContent = 'Error: The selected file does not appear to be an image.'
+	// 	return;
+	//   }
+	  const reader = new FileReader(this);
 	  reader.addEventListener('load', event => {
-		output.src = event.target.result;
-	  });
+		 result = event.target.result;
+		 $('#top_image').css('background-image', 'url("' + result + '")');
+		// $("#top_row").append('<div class="col-lg-12 d-flex align-items-end flex-column " id="top_image" style="background-image: url(' + result + ');"><div class="mt-auto"><label class="custom-file-upload btn btn-outline-light btn-lg"><input type="file" id="file-selector"  ><i class="fas fa-camera"></i></label></div></div>')
+
+	});
 	  reader.readAsDataURL(file);
+	 
 	}); 
-  }
+//   }
 
 
 	// if (window.FileList && window.File && window.FileReader) {

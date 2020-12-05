@@ -102,10 +102,7 @@ hr{
 
 /* Image Below Navbar */
 /* Section 1 */
-img{
-    width: 100%;
-    /* height: 500px; */
-}
+
 .col-lg-12{
     padding: 0;
 }
@@ -136,8 +133,30 @@ img{
     background-color: rgba(255, 192, 203, 0.37);
 }
 
-.image_top_tag{
+#top_id_image{
     max-height: 600px;
+    width: 100%;
+    height: auto;
+}
+
+@media(max-width:550px){
+    #top_id_image{
+        position: relative;
+        max-height: 900px;
+        width:auto;
+        
+        
+    }
+} 
+
+#top_image{
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    
+    background-size: cover;
+    background-position: center center;
+
 }
 
 .psec2{
@@ -215,10 +234,12 @@ background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);
 
 
 .custom-file-upload {
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     display: inline-block;
-    padding: 6px 12px;
+    padding: 12px 12px;
     cursor: pointer;
+    border-radius: 50%;
+    margin-right: 10px;
 }
 
 input[type="file"] {

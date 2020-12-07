@@ -30,7 +30,9 @@ var imagePath = null;
 
 // $("#btn_add_card").on("click",function(){
     // $(".new__card__").append('')
-    $(".new__card__").append('<form class="temp-form"><div class="form-group"><input type="text" id="path" class= " form-control" placeholder="Enter Image Path"></div><div class="form-group"><input type="text" id="title" class= "form-control"  placeholder="Enter Card Title"></div><div class="form-group"><input type="text"  id="id_card_body" class= "form-control"  placeholder="Enter Card Body"></div><div class="form-group d-inline-flex"><button type= "button" class="btn btn-primary btn-sm new_card_btn p-3  " >ADD</button></div><div class="form-group d-inline-flex mx-3"><button type= "button" class="btn btn-danger btn-sm new_card_btn_cancel p-3 " >CANCEL</button></div></form>');
+    // $(".new__card__").append('<form class="temp-form"><div class="form-group"><input type="text" id="path" class= " form-control" placeholder="Enter Image Path"></div><div class="form-group"><input type="text" id="title" class= "form-control"  placeholder="Enter Card Title"></div><div class="form-group"><input type="text"  id="id_card_body" class= "form-control"  placeholder="Enter Card Body"></div><div class="form-group d-inline-flex"><button type= "button" class="btn btn-primary btn-sm new_card_btn p-3  " >ADD</button></div><div class="form-group d-inline-flex mx-3"><button type= "button" class="btn btn-danger btn-sm new_card_btn_cancel p-3 " >CANCEL</button></div></form>');
+  
+    $(".new__card__").append('<form class="temp-form"><div class="form-group d-flex justify-content-between mt-2"><label class="custom-file-upload btn btn-outline-light btn-lg d-inline-flex "><input type="file" id="file-exp-selector"  ><i class="fas fa-camera"></i></label><input type="text" id="title" class= "form-control form-control-crdttl  mb-2 d-inline-flex"  placeholder="Enter Card Title"></div><div class="form-group"><input type="text"  id="id_card_body" class= "form-control mb-3"  placeholder="Enter Card Body"></div><div class="form-group d-inline-flex"><button type= "button" class="btn btn-primary btn-sm new_card_btn p-3  " >ADD</button></div><div class="form-group d-inline-flex mx-3"><button type= "button" class="btn btn-danger btn-sm new_card_btn_cancel p-3 " >CANCEL</button></div></form>');
     // $(".new__card__").append('')
     // $(".new__card__").append('')
     // $(".new__card__").append('')
@@ -39,17 +41,35 @@ var imagePath = null;
 
 
     //$(".new__card__").append('<div class="form-group"><button class="btn btn-outline-primary btn-sm new_card_btn_del p-3 "><i class="far fa-user"></i></button></div>')
-    $("#path").keypress(function(event){
-    if(event.keyCode === 13){
-        imagePath = $(this).val();
-        $(this).val("");
-        $(this).remove();  
+//     $("#path").keypress(function(event){
+//     if(event.keyCode === 13){
+//         imagePath = $(this).val();
+//         $(this).val("");
+//         $(this).remove();  
         
     
-    // $("input[type='text']").fadeOut;
     
-    }
-})
+    
+//     }
+// })
+
+$('#file-exp-selector').on('change', event => {
+  const file = event.target.files[0];
+  const reader = new FileReader(this);
+
+  reader.addEventListener('load', event => {
+    result = event.target.result;
+
+    
+    //  $('#top_image').css('background-image', 'url("' + result + '")');
+    // $("#top_row").append('<div class="col-lg-12 d-flex align-items-end flex-column " id="top_image" style="background-image: url(' + result + ');"><div class="mt-auto"><label class="custom-file-upload btn btn-outline-light btn-lg"><input type="file" id="file-selector"  ><i class="fas fa-camera"></i></label></div></div>')
+
+});
+  reader.readAsDataURL(file);
+ 
+}); 
+
+// $("input[type='text']").fadeOut;
     
     $("#title").keypress(function(event){
         // $(function() {
@@ -85,7 +105,7 @@ var imagePath = null;
         // e.preventDefault();
         $(".temp-form").remove();
         // event.preventDefault();
-        $(".row").append('<div class="col-lg-4 d-flex im_hi_div my-2 "><div class="card"><img src="' + imagePath + '" class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">' + title + '</h5><p class="card-text">' + card_body + '</p><button class="btn btn-outline-light btn-sm mx-2 btn_delete_card">Delete Card</button><button type="button" onclick="getData()" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></button></div><div class="card-footer"><small class="text-muted">Last updated 3 mins ago</small></div></div></div>');
+        $(".row").append('<div class="col-lg-4 d-flex im_hi_div my-2 "><div class="card"><img src="' + result + '" class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">' + title + '</h5><p class="card-text">' + card_body + '</p><button class="btn btn-outline-light btn-sm mx-2 btn_delete_card">Delete Card</button><button type="button" onclick="getData()" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></button></div><div class="card-footer"><small class="text-muted">Last updated 3 mins ago</small></div></div></div>');
         // getData();
     })   
     $(".form-group").on("click",".new_card_btn_cancel",function(){
